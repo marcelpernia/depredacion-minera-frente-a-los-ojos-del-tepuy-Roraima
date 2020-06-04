@@ -555,6 +555,7 @@ div[class*="col-"] {
     z-index: 2;
 }
 
+#inicio:before,
 #home:before {
     content: '';
     display: block;
