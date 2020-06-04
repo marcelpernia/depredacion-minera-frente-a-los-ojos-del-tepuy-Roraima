@@ -26,23 +26,6 @@ AOS.init({
 
 
 $(document).ready(function(){
-	var mapa = $('#mapa');
-	var btn1 = $('#btn-1');
-  var btn2 = $('#btn-2');
-
-	btn1.click(function(){
-		mapa.attr('src','map.html');
-		$(this).parent().hide();
-
-    btn2.parent().show();
-	});
-
-  btn2.click(function(){
-    mapa.attr('src','map-slides.html');
-    $(this).parent().hide();
-
-    btn1.parent().show();
-  });
 
   const container = $('#container');
   const navicon = $('#navicon');
@@ -66,15 +49,6 @@ $(document).ready(function(){
     getWidth();
   });
 
-  var waypoint = new Waypoint({
-    element: document.getElementById('map-container'),
-    handler: function(direction='down') {
-      // alert('holaaaa');
-      mapa.fadeIn('fast');
-      this.destroy();
-    },
-    offset: '80%'
-  })
 });
 
 GreenAudioPlayer.init({

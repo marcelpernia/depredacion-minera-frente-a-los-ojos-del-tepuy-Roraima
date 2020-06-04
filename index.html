@@ -9,7 +9,7 @@
     <meta property="og:url" content="https://www.correodelcaroni.com/depredacion-minera-frente-a-los-ojos-del-tepuy-roraima" />
     <meta property="og:image" content="https://www.correodelcaroni.com/depredacion-minera-frente-a-los-ojos-del-tepuy-roraima/assets/img/img_7145.jpg" />
     <meta name="description" content="Aunque oficialmente está fuera del Arco Minero del Orinoco, en más de 1.000 hectáreas del Parque Nacional Canaima también se busca oro. Indígenas de la Gran Sabana, forzados por la crisis humanitaria, participan en una actividad que amenaza uno de los rincones más biodiversos de la Tierra y Patrimonio Mundial, declarado por la Unesco.">
-    <link rel="stylesheet" href="assets/css/style.css?asd452asdasd5345">
+    <link rel="stylesheet" href="assets/css/style.css?asd4ssdasd5345">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 
@@ -18,12 +18,12 @@
         <div id="sidebar" class="sidebar">
             <i id="navicon" class="fa fa-bars navicon"></i>
             <div class="language-switch-container">
-                <a href="#" class="language-switch"><i class="fas fa-globe"></i>English</a>
+                <a href="en.html" class="language-switch"><i class="fas fa-globe"></i>English</a>
             </div>
 
             <div class="nav-container">
                 <div class="n-h">
-                    <div><span>Índice</span></div>
+                    <div><span>Menú</span></div>
                 </div>
                 <ul class="nav">
                     <li><a href="#inicio">Inicio</a></li>
@@ -792,19 +792,47 @@ pemón que este año llegó a Venezuela tras dos décadas en Alemania.
     </div>
 
     <script src="assets/js/slideNav.min.js"></script>
-    <!--<link rel="stylesheet" href="assets/js/overlayscrollbars/OverlayScrollbars.min.css">-->
-    <!--<script src="assets/js/overlayscrollbars/OverlayScrollbars.min.js"></script>-->
     <link rel="stylesheet" href="assets/js/jquerymodal/jquery.modal.min.css">
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquerymodal/jquery.modal.min.js"></script>
     <script src="assets/js/sharer.min.js"></script>
-    <!-- <script src="assets/js/lazyload.js"></script> -->
     <link rel="stylesheet" href="assets/js/aos/aos.css">
     <script src="assets/js/aos/aos.js"></script>
     <link rel="stylesheet" href="assets/js/audioplayer/green-audio-player.min.css">
     <script src="assets/js/audioplayer/green-audio-player.min.js"></script>
     <script src="assets/js/waypoints/lib/noframework.waypoints.min.js"></script>
     <script src="assets/js/app.js?v2"></script>
+    <script>
+        $(document).ready(function(){
+            var mapa = $('#mapa');
+            var btn1 = $('#btn-1');
+            var btn2 = $('#btn-2');
+
+            btn1.click(function(){
+                mapa.attr('src','map.html');
+                $(this).parent().hide();
+
+                btn2.parent().show();
+            });
+
+          btn2.click(function(){
+            mapa.attr('src','map-slides.html');
+            $(this).parent().hide();
+
+            btn1.parent().show();
+          });
+
+          var waypoint = new Waypoint({
+            element: document.getElementById('map-container'),
+            handler: function(direction='down') {
+              mapa.fadeIn('fast');
+              mapa.attr('src','map-slides.html');
+              this.destroy();
+            },
+            offset: '80%'
+          });
+        });
+    </script>
 </body>
 
 </html>
