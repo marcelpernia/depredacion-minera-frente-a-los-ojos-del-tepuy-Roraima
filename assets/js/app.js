@@ -66,11 +66,25 @@ $(document).ready(function(){
     getWidth();
   });
 
+  var waypoint = new Waypoint({
+    element: document.getElementById('map-container'),
+    handler: function(direction='down') {
+      // alert('holaaaa');
+      mapa.fadeIn('fast');
+      this.destroy();
+    },
+    offset: '80%'
+  })
 });
 
 GreenAudioPlayer.init({
   selector: '.player',
   stopOthersOnPlay: true
 });
+
+
+
+
+
 
 
